@@ -1,4 +1,4 @@
-import excelTranPer
+from excelTranPer import *
 
 glcNumbers()
 print("\n")
