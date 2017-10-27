@@ -200,12 +200,4 @@ def wrapNumbers():
             dischargedList.append(i)
     print("Un Successful Discharge percentage for WRAP:" + str(len(dischargedList)/len(emptyList)))
 
-glcNumbers()
-print("\n")
-doughertyNumbers()
-print("\n")
-droegeNumbers()
-print("\n")
-wrapNumbers()
-print("\n")
-detoxNumbers()
+
