@@ -1,29 +1,47 @@
 import openpyxl
 
 
-glc_wb = openpyxl.load_workbook('/Users/nichodeturbo/Desktop/Grateful Life Master Roster 170831.xlsx')
-glc_sheet = glc_wb.get_sheet_by_name("Residential")
-glc_otherThing = glc_sheet.max_row
 
+essagebox.showinfo("Choose File", "Choose GLC Master")
+file_path = filedialog.askopenfilename()
+helloFile = open(file_path, "r")
 
-do_wb = openpyxl.load_workbook('/Users/nichodeturbo/Desktop/Dougherty House IOP Master Roster August 2017.xlsx')
-do_sheet = do_wb.get_sheet_by_name("OUTPATIENT")
-do_otherThing = do_sheet.max_row
-
-
-dr_wb = openpyxl.load_workbook('/Users/nichodeturbo/Desktop/Master Droege Daily Roster July 2017.xlsx')
-dr_sheet = dr_wb.get_sheet_by_name("Residential")
-dr_otherThing = dr_sheet.max_row
-
-
-de_wb = openpyxl.load_workbook('/Users/nichodeturbo/Desktop/Master Droege Detox Daily Roster july 2017.xlsx')
-de_sheet = de_wb.get_sheet_by_name("DETOX")
-de_otherThing = de_sheet.max_row
-
-
-wb = openpyxl.load_workbook('/Users/nichodeturbo/Desktop/Wrap Daily Roster 20170801master.xlsx')
-sheet = wb.get_sheet_by_name("Residential")
+wb = openpyxl.load_workbook(file_path)    # This spreadsheet contains all the identifiers I need
+sheet = wb.get_sheet_by_name("Sheet1")
 otherThing = sheet.max_row
+
+messagebox.showinfo("Choose File", "Choose WRAP")
+file_path2 = filedialog.askopenfilename()
+helloFile2 = open(file_path2, "r")
+
+wb2 = openpyxl.load_workbook(file_path2)    # This spreadsheet contains all the identifiers I need
+sheet2 = wb2.get_sheet_by_name("Sheet1")
+otherThing2 = sheet2.max_row
+
+messagebox.showinfo("Choose File", "Choose IOP")
+file_path3 = filedialog.askopenfilename()
+helloFile3 = open(file_path3, "r")
+
+wb3 = openpyxl.load_workbook(file_path3)    # This spreadsheet contains all the identifiers I need
+sheet3 = glc_wb.get_sheet_by_name("Sheet1")
+otherThing3 = sheet3.max_row
+
+
+messagebox.showinfo("Choose File", "Choose Detox")
+file_path4 = filedialog.askopenfilename()
+helloFile4 = open(file_path4, "r")
+
+wb4 = openpyxl.load_workbook(file_path4)    # This spreadsheet contains all the identifiers I need
+sheet4 = wb4.get_sheet_by_name("Sheet1")
+otherThing4 = sheet4.max_row
+
+messagebox.showinfo("Choose File", "Choose Droege")
+file_path5 = filedialog.askopenfilename()
+helloFile5 = open(file_path5, "r")
+
+wb5 = openpyxl.load_workbook(file_path5)    # This spreadsheet contains all the identifiers I need
+sheet5 = glc_wb5.get_sheet_by_name("Sheet1")
+otherThing5 = glc_sheet5.max_row
 
 
 glc_emptyList = []
@@ -212,5 +230,4 @@ def wrapNumbers():
         if i == "Un Succ Dis":
             dischargedList.append(i)
     print("Un Successful Discharge percentage for WRAP:" + str(len(dischargedList)/len(emptyList) * 100) + str("%"))
-
 
