@@ -2,7 +2,6 @@ import openpyxl
 from tkinter import messagebox
 from tkinter import filedialog
 import datetime
-import time
 import tkinter as tk
 
 
@@ -92,11 +91,11 @@ dischargedList = []
 
 
 userFileName = today
-helloPath3 = ("/Users/nichodeturbo/Desktop/Python_Code/" + "09" + str(now.month) + str(now.day) + str(now.hour) + str(now.minute) + ".txt")
-helloFile3 = open(helloPath3, "w")
+helloPath6 = ("/Users/nichodeturbo/Desktop/Python_Code/" + "09" + str(now.month) + str(now.day) + str(now.hour) + str(now.minute) + ".txt")
+helloFile6 = open(helloPath6, "w")
 
 
-def glcNumbers():
+def glcNumbers():       # This could be a class that has these functions inside it and lists
     for columnOfCellObjects in sheet["J134": "J155"]:
         for cellObj in columnOfCellObjects:
             if cellObj.value == "ASA":
@@ -109,19 +108,15 @@ def glcNumbers():
     for i in glc_emptyList:
         if i == "ASA":
             glc_asaList.append(i)
-    print(" ")
-    print("ASA percentage for GLC:" + str(len(glc_asaList) / len(glc_emptyList) * 100) + str("%"))
-    helloFile3.write("ASA percentage for GLC:" + str(len(glc_asaList) / len(glc_emptyList) * 100) + str("%") + "\n")
+    helloFile6.write("ASA percentage for GLC:" + str(len(glc_asaList) / len(glc_emptyList) * 100) + str("%") + "\n")
     for i in glc_emptyList:
         if i == "Discharged":
             glc_dischargedList.append(i)
-    print("Discharged percentage for GLC:" + str(len(glc_dischargedList) / len(glc_emptyList) * 100) + str("%"))
-    helloFile3.write("Discharged percentage for GLC:" + str(len(glc_dischargedList) / len(glc_emptyList) * 100) + str("%") + "\n")
+    helloFile6.write("Discharged percentage for GLC:" + str(len(glc_dischargedList) / len(glc_emptyList) * 100) + str("%") + "\n")
     for i in glc_emptyList:
         if i == "Completed":
             glc_completedList.append(i)
-    print("Graduated percentage for GLC:" + str(len(glc_completedList) / len(glc_emptyList) * 100) + str("%"))
-    helloFile3.write("Graduated percentage for GLC:" + str(len(glc_completedList) / len(glc_emptyList) * 100) + str("%") + "\n" + "\n")
+    helloFile6.write("Graduated percentage for GLC:" + str(len(glc_completedList) / len(glc_emptyList) * 100) + str("%") + "\n" + "\n")
 
 
 def doughertyNumbers():
@@ -135,15 +130,12 @@ def doughertyNumbers():
     for i in do_emptyList:
         if i == "GRAD":
             do_completedList.append(i)
-    print(" ")
-    print("Graduated percentage for IOP:" + str(len(do_completedList) / len(do_emptyList) * 100) + str("%"))
-    helloFile3.write("Graduated percentage for IOP:" + str(len(do_completedList) / len(do_emptyList) * 100) + str("%") + "\n")
+    helloFile6.write("Graduated percentage for IOP:" + str(len(do_completedList) / len(do_emptyList) * 100) + str("%") + "\n")
 
     for i in do_emptyList:
         if i == "Unsucc":
             do_dischargedList.append(i)
-    print("Unsuccessful percentage for IOP:" + str(len(do_dischargedList) / len(do_emptyList) * 100) + str("%"))
-    helloFile3.write("Unsuccessful percentage for IOP:" + str(len(do_dischargedList) / len(do_emptyList) * 100) + str("%") + "\n" + "\n")
+    helloFile6.write("Unsuccessful percentage for IOP:" + str(len(do_dischargedList) / len(do_emptyList) * 100) + str("%") + "\n" + "\n")
 
 
 def droegeNumbers():
@@ -161,27 +153,22 @@ def droegeNumbers():
     for i in dr_emptyList:
         if i == "ASA":
             dr_asaList.append(i)
-    print(" ")
-    print("ASA percentage for Droege:" + str(len(dr_asaList) / len(dr_emptyList) * 100) + str("%"))
-    helloFile3.write("ASA percentage for Droege:" + str(len(dr_asaList) / len(dr_emptyList) * 100) + str("%") + "\n")
+    helloFile6.write("ASA percentage for Droege:" + str(len(dr_asaList) / len(dr_emptyList) * 100) + str("%") + "\n")
 
     for i in dr_emptyList:
         if i == "Graduate":
             dr_completedList.append(i)
-    print("Graduated percentage for Droege:" + str(len(dr_completedList) / len(dr_emptyList) * 100) + str("%"))
-    helloFile3.write("Graduated percentage for Droege:" + str(len(dr_completedList) / len(dr_emptyList) * 100) + str("%") + "\n")
+    helloFile6.write("Graduated percentage for Droege:" + str(len(dr_completedList) / len(dr_emptyList) * 100) + str("%") + "\n")
 
     for i in dr_emptyList:
         if i == "Complete":
             dr_arrestedList.append(i)
-    print("Completion percentage for Droege:" + str(len(dr_arrestedList) / len(dr_emptyList) * 100) + str("%"))
-    helloFile3.write("Completion percentage for Droege:" + str(len(dr_arrestedList) / len(dr_emptyList) * 100) + str("%") + "\n")
+    helloFile6.write("Completion percentage for Droege:" + str(len(dr_arrestedList) / len(dr_emptyList) * 100) + str("%") + "\n")
 
     for i in dr_emptyList:
         if i == "Discharged":
             dr_dischargedList.append(i)
-    print("Discharged percentage for Droege:" + str(len(dr_dischargedList) / len(dr_emptyList) * 100) + str("%"))
-    helloFile3.write("Discharged percentage for Droege:" + str(len(dr_dischargedList) / len(dr_emptyList) * 100) + str("%") + "\n" + "\n")
+    helloFile6.write("Discharged percentage for Droege:" + str(len(dr_dischargedList) / len(dr_emptyList) * 100) + str("%") + "\n" + "\n")
 
 
 def detoxNumbers():
@@ -199,27 +186,22 @@ def detoxNumbers():
     for i in de_emptyList:
         if i == "ASA":
             de_asaList.append(i)
-    print(" ")
-    print("ASA percentage for Detox:" + str(len(de_asaList) / len(de_emptyList) * 100) + str("%"))
-    helloFile3.write("ASA percentage for Detox:" + str(len(de_asaList) / len(de_emptyList) * 100) + str("%") + "\n")
+    helloFile6.write("ASA percentage for Detox:" + str(len(de_asaList) / len(de_emptyList) * 100) + str("%") + "\n")
 
     for i in de_emptyList:
         if i == "Med Discharge":
             de_completedList.append(i)
-    print("Med Discharge percentage for Detox:" + str(len(de_completedList) / len(de_emptyList) * 100) + str("%"))
-    helloFile3.write("Med Discharge percentage for Detox:" + str(len(de_completedList) / len(de_emptyList) * 100) + str("%") + "\n")
+    helloFile6.write("Med Discharge percentage for Detox:" + str(len(de_completedList) / len(de_emptyList) * 100) + str("%") + "\n")
 
     for i in de_emptyList:
         if i == "comp":
             de_arrestedList.append(i)
-    print("Completion percentage for Detox:" + str(len(de_arrestedList) / len(de_emptyList) * 100) + str("%"))
-    helloFile3.write("Completion percentage for Detox:" + str(len(de_arrestedList) / len(de_emptyList) * 100) + str("%") + "\n")
+    helloFile6.write("Completion percentage for Detox:" + str(len(de_arrestedList) / len(de_emptyList) * 100) + str("%") + "\n")
 
     for i in de_emptyList:
         if i == "Discharged":
             de_dischargedList.append(i)
-    print("Discharged percentage for Detox:" + str(len(de_dischargedList) / len(de_emptyList) * 100) + str("%"))
-    helloFile3.write("Discharged percentage for Detox:" + str(len(de_dischargedList) / len(de_emptyList) * 100) + str("%") + "\n" + "\n")
+    helloFile6.write("Discharged percentage for Detox:" + str(len(de_dischargedList) / len(de_emptyList) * 100) + str("%") + "\n" + "\n")
 
 
 def wrapNumbers():
@@ -237,33 +219,27 @@ def wrapNumbers():
     for i in emptyList:
         if i == "ASA":
             asaList.append(i)
-    print(" ")
-    print("ASA percentage for WRAP:" + str(len(asaList) / len(emptyList) * 100) + str("%"))
-    helloFile3.write("ASA percentage for WRAP:" + str(len(asaList) / len(emptyList) * 100) + str("%") + "\n")
+    helloFile6.write("ASA percentage for WRAP:" + str(len(asaList) / len(emptyList) * 100) + str("%") + "\n")
 
     for i in emptyList:
         if i == "Completed":
             completedList.append(i)
-    print("Completed percentage for WRAP:" + str(len(completedList) / len(emptyList) * 100) + str("%"))
-    helloFile3.write("Completed percentage for WRAP:" + str(len(completedList) / len(emptyList) * 100) + str("%") + "\n")
+    helloFile6.write("Completed percentage for WRAP:" + str(len(completedList) / len(emptyList) * 100) + str("%") + "\n")
 
     for i in emptyList:
         if i == "Arrested":
             arrestedList.append(i)
-    print("Arrested percentage for WRAP:" + str(len(arrestedList) / len(emptyList) * 100) + str("%"))
-    helloFile3.write("Arrested percentage for WRAP:" + str(len(arrestedList) / len(emptyList) * 100) + str("%") + "\n")
+    helloFile6.write("Arrested percentage for WRAP:" + str(len(arrestedList) / len(emptyList) * 100) + str("%") + "\n")
 
     for i in emptyList:
         if i == "Discharged":
             dischargedList.append(i)
-    print("Discharged percentage for WRAP:" + str(len(dischargedList) / len(emptyList) * 100) + str("%"))
-    helloFile3.write("Discharged percentage for WRAP:" + str(len(dischargedList) / len(emptyList) * 100) + str("%") + "\n")
+    helloFile6.write("Discharged percentage for WRAP:" + str(len(dischargedList) / len(emptyList) * 100) + str("%") + "\n")
 
     for i in emptyList:
         if i == "Un Succ Dis":
             dischargedList.append(i)
-    print("Un Successful Discharge percentage for WRAP:" + str(len(dischargedList) / len(emptyList) * 100) + str("%"))
-    helloFile3.write("Un Successful Discharge percentage for WRAP:" + str(len(dischargedList) / len(emptyList) * 100) + str("%") + "\n" + "\n")
+    helloFile6.write("Un Successful Discharge percentage for WRAP:" + str(len(dischargedList) / len(emptyList) * 100) + str("%") + "\n" + "\n")
 
 
 def gO_Now():
@@ -272,8 +248,6 @@ def gO_Now():
     detoxNumbers()
     wrapNumbers()
     doughertyNumbers()
-    print(today)
-    time.sleep(3)
     exit()
 
 
